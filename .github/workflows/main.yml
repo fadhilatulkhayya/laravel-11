@@ -105,6 +105,4 @@ jobs:
       - name: Send Telegram Notification on Failure
         if: ${{ needs.laravel_setup.result == 'failure' || needs.laravel_test.result == 'failure' }}
         run: |
-          curl -s -X POST 
-https://api.telegram.org/bot$
-{{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} -d text="Proses build atau test Laravel gagal!" 
+          curl -s -X POST https://api.telegram.org/bot$ {{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} -d text="Proses build atau test Laravel gagal!" 
